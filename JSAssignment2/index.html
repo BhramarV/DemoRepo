@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> HTML JS Hover Assignment </title>
+        <!-- <script src="indexJS.js"></script> -->
+        <script type="text/javascript" src="./indexJS.js"></script>  
+        <link rel="stylesheet" href="./indexCSS.css">  
+    </head>
+    <body>
+        <div id="DivTag1">
+            <h1>Introduction to Events in Node.js</h1> 
+            
+            <h3> 
+                <p> 
+                    As we know, Node.js applications are event-driven. The name “Event” itself describes its meaning as something that “happens” or “occurs”. Events in Node.js are similar to the concept of the callback function in Node.js. The only difference is that callback function executes once the asynchronous function returns its results, whereas events are triggered on its corresponding event handler.
+
+                    Today we will look into the “Events” module provided by Node.js, which consists of the “EventEmitter” class that enables us to implement event-driven programming. We will have a quick look at various methods provided by the EventEmitter class and also how event-driven programming makes Node.js fast and gives high performance.
+                </p> 
+            </h3>
+        </div>
+
+        <div id="DivTag2">
+            <h1>
+                Code snippet:
+            </h1>
+
+            <h3>
+                <p>
+                    const EventEmitter = require('events') const emitter = <br>
+                    new EventEmitter() emitter.once('messageLogged', <br>
+                    function(){   console.log("Listening to the event messageLogged") <br>
+                    }) <br>
+                    emitter.emit('messageLogged') <br>
+                </p>
+            </h3>
+        </div>
+        
+
+
+        <div id="div1" onmouseover="onMouseDiv1()" onmouseout="onDefaultDiv1()"> <h1> This is my First Div Tag With Default text color is "BLACK" </h1> </div>
+        <div id="div2" onmouseover="onMouseDiv2()" onmouseout="onDefaultDiv2()"> <h1> This is my Second Div Tag With Default text color is "BLACK" </h1> </div>
+        <script src="./indexJS.js"></script>
+    </body>
+</html>

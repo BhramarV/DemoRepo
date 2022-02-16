@@ -1,0 +1,13 @@
+body{
+    background-color: cadetblue;
+    text-align: center;
+}
+h1{
+    border: dotted;
+    padding: 20px;
+    margin: 20px;
+}
+h3{
+    border: dotted;
+    border-radius: 5em;
+}
