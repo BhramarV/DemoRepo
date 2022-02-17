@@ -44,3 +44,15 @@ document.getElementById("DivTag2")
     .onmouseout = function () {
         document.getElementById("DivTag2").style.color="black";
 };
+
+function onMouse(event){
+  // document.getElementById("div2").style.backgroundColor='yellow';
+  // document.getElementById("div2").style.border='dotted';
+  document.getElementById(id).style.color="blue"
+}
+
+function outMouse(event){
+  // document.getElementById("div1").style.border="";
+  // document.getElementById("div1").style.backgroundColor='white';
+  document.getElementById(id).style.color="black";
+}
