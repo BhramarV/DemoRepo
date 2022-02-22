@@ -1,35 +1,29 @@
-var num = {
-    firstNum: 30
+var num = {  
 }
 
-Object.defineProperty(num, "getNum", {
+Object.defineProperty(num, "firstName", {
     get : function () {
-        return this.firstNum;
-        console.log(num.firstNum);
+        return value;
+        // console.log(num.firstNum);
+    },
+    set : function(val){
+        // debugger;
+        value = val;
+        document.getElementById("userInput").value = val;
     }
 });
-
-// setting property
-Object.defineProperty(num, "changeNum", {
-    set : function (value) {
-        this.firstNum = value;
-    }
-});
-
-document.getElementById("userInput").value = num.getNum;
 
 setInterval(() => {
     randomValue();
-    document.getElementById("userInput").value = num.getNum;
 }, 10000);
 
 function randomValue(){
-    // debugger;
-    num.changeNum = Math.floor(Math.random() * 100);
+    debugger;
+    num.firstName = Math.floor(Math.random() * 100);
 }
 
 function onSubmit(){
-    // debugger;
-    num.changeNum = document.getElementById("userInput").value;
-    alert("Entered Number is : " + num.getNum);
+    debugger;
+    num.firstName = document.getElementById("userInput").value;
+    alert("Entered Number is : " + num.firstName);
 }
