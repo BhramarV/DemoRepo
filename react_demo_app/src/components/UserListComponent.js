@@ -6,7 +6,7 @@ export default function UserListComponent(props) {
         <div>
             <h1>Employee List is Given Below...</h1>
             <div>
-                {props.UserListComponent.map(function(data) {
+                {props.detail.map(function(data) {
                     return (
                         <UserDetailsComponent {...data}></UserDetailsComponent>
                     )

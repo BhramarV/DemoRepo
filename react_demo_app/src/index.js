@@ -13,8 +13,19 @@
 //     , document.getElementById("root"))
 // // ReactDOM.render(<App UserListComponent={userList}>  </App>, document.getElementById("root"))
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+//import App from './components/UserListComponent.js';
+import App from "./classComponent/SearchCards.js";
 
-import ReactDOM from "react-dom";
-import App from "./classComponent/AccountAddComponent.js";
+//import SearchCard from "./classComponent/SearchCards.js";
+debugger;
 
-ReactDOM.render(<App></App>, document.getElementById("root"))
+ReactDOM.render(<App></App>
+    , document.getElementById("root"))
+// ReactDOM.render(<App UserListComponent={userList}>  </App>, document.getElementById("root"))
+
+// import ReactDOM from "react-dom";
+// import App from "./classComponent/AccountAddComponent.js";
+
+// ReactDOM.render(<App></App>, document.getElementById("root"))

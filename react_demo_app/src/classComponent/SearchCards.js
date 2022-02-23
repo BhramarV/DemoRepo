@@ -7,56 +7,39 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-        formtext: "",
-        data: userList
+      formtext: "",
+      data: userList
     }
   }
 
-  handleChange(event){
+  handleChange(event) {
+    debugger;
+    this.state.formtext = event.target.value;
+    if (this.state.formtext === "" && this.state.formtext === " "){
+      this.state.data = userList;
+    }
+    else {
       this.setState({
-        formtext: event.target.value,
-        //  formtext: "4",
-
-        // data = userList.filter( return { userList.id  })
-        
-        data : userList.filter( id => {
-            // returthis.state.id == this.state.formtext
-            if (userList.id === this.state.formtext){
-                return this.state.data.find(userList.id);
-            }
+        data: this.state.data.filter((user) => {
+          return user.id.startsWith(this.state.formtext)
         })
-      })
-      debugger;
+      });
+    }
   }
 
-//   handleChange = event => {
-//     this.setState({
-//         formtext: event.target.value,
-
-//         // data = userList.filter( return { userList.id  })
-        
-//         data : userList.filter( id => {
-//             return this.state.id == this.state.formtext
-//         })
-//     })
-//     debugger;
-//   }
-
-  render() {
+    render() {
     return (
       <div>
-        {/* <h3>enter details to be searched:</h3>
-        <input placeholder="Enter name" onChange={this.handleChange(event)} value = {this.state.formtext}/>
-        <FormChild display = {this.state.formtext}/> */}
-
         <label>Enter id</label>
-        <input id='formtext' onChange={(event) => this.handleChange(event)} />
+        {/* <input id='formtext' onChange={(event) => this.handleChange(event)} /> */}
+        <input id='formtext' onKeyUp={(event) => this.handleChange(event)} />
         <br />
         <p>The name entered is {this.state.formtext}</p>
 
-        <App UserListComponent={this.state.data}> </App>
+        <App detail={this.state.data}> </App>
       </div>
     )
+    debugger;
   }
 }
 

@@ -1,5 +1,3 @@
-// import "../styles/EmployeeDetailsComponentStyle.css";
-
 export default function UserDetailsComponent(props) {
 
     var styleObject =  {
