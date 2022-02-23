@@ -16,9 +16,10 @@ export default class SBIAccountListComponent extends React.Component {
         return (
             <div>
                 <h1>Employee List is given Below:</h1>
-                {this.state.employeeList.map((employee) => {
+                return {this.state.employeeList}
+                {/* {this.state.employeeList.map((employee) => {
                     return <ShareDetailsComponent {...employee}></ShareDetailsComponent>
-                })}
+                })} */}
             </div>
         )
         debugger;

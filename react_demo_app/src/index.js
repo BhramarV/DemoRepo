@@ -15,6 +15,6 @@
 
 
 import ReactDOM from "react-dom";
-import App from "./classComponent/SBIShareListComponent";
+import App from "./classComponent/AccountAddComponent.js";
 
 ReactDOM.render(<App></App>, document.getElementById("root"))

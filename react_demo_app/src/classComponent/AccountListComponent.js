@@ -23,12 +23,12 @@ export default class AccountListComponent extends React.Component {
 
     componentDidMount() {
         var dataPromise = Axios.get("https://localhost:5001/api/Student/AllStudents");
-        Axios.delete("/api/Student/DeleteAccount/{accountNumber}");
+        // Axios.delete("/api/Student/DeleteAccount/{accountNumber}");
         dataPromise.then((response) => {
             this.setState({
                 employeeList: response.data
             })
         })
-
+        debugger;
     }
 }
