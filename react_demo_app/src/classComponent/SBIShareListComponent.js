@@ -1,37 +1,32 @@
-import React from 'react';
-import Axios from 'axios';
-import ShareDetailsComponent from "./SBIShareDetailsComponent"
+import Displaydata from "../classComponent/SBIShareDetailsComponent";
+import React, { Component } from 'react';
+import axios from 'axios';
 
-export default class SBIAccountListComponent extends React.Component {
+export default class UserListComponent extends Component {
     constructor() {
         super();
         this.state = {
-            employeeList: []
+            'accountdetail': []
         }
-        debugger;
     }
-
+    // debugger;
     render() {
-        debugger;
         return (
             <div>
-                <h1>Employee List is given Below:</h1>
-                return {this.state.employeeList}
-                {/* {this.state.employeeList.map((employee) => {
-                    return <ShareDetailsComponent {...employee}></ShareDetailsComponent>
-                })} */}
+                <div>
+                    <Displaydata detail={this.state.accountdetail.data}></Displaydata>
+                </div>
             </div>
         )
-        debugger;
     }
-
     componentDidMount() {
-        var dataPromise = Axios.get("https://priceapi.moneycontrol.com/pricefeed/nse/equitycash/NLC");
+        var dataPromise = axios.get("https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/SBI");
         dataPromise.then((response) => {
+            debugger;
             this.setState({
-                employeeList: response.data
+                accountdetail: response.data
             })
+            debugger;
         })
-
     }
 }

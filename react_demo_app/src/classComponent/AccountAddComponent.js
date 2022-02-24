@@ -4,7 +4,7 @@ import axios from "axios";
 class AccountAddComponent extends Component {
   state = {
     accountNumber : "",
-    customerName : "",
+    customerName : "",  
     currentAddress : "",
     currentBalance : ""
   };

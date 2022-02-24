@@ -8,7 +8,8 @@ class Form extends Component {
     super();
     this.state = {
       formtext: "",
-      data: userList
+      data: userList,
+      update: userList
     }
   }
 
@@ -20,7 +21,7 @@ class Form extends Component {
     }
     else {
       this.setState({
-        data: this.state.data.filter((user) => {
+        updata: this.state.data.filter((user) => {
           return user.id.startsWith(this.state.formtext)
         })
       });
@@ -36,7 +37,7 @@ class Form extends Component {
         <br />
         <p>The name entered is {this.state.formtext}</p>
 
-        <App detail={this.state.data}> </App>
+        <App detail={this.state.updata}> </App>
       </div>
     )
     debugger;
