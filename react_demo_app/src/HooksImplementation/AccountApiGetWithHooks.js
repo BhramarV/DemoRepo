@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PutHook from './AccountApiPutWithHooks';
+import AccountDetailsComponent from '../classComponent/AccountDetailsComponent';
 
 export default function GetHook() {
-    var [counter, setCounter] = useState(0);
-    var [accountdetail, setAccountDetail] = useState("");
+    var [accountdetail, setAccountDetail] = useState([]);
+    // var [accountNumber, setNumber] = useState("");
     debugger;
 
     useEffect(() => {
-        var dataPromise = axios.get("https://localhost:5001/api/Student/StudentById/201");
+        var dataPromise = axios.get("https://localhost:5001/api/Student/AllStudents");
         dataPromise.then((response) => {
             debugger;
             setAccountDetail(response.data);
@@ -17,10 +18,12 @@ export default function GetHook() {
     }, [])
 
     return (
-        <div>
-            <h1> Your account number is {accountdetail.customerName} </h1>
-            <PutHook dataSend = {accountdetail}></PutHook>
+        <div>      
+            {
+                accountdetail.map((employee) => {
+                    return <AccountDetailsComponent key={employee.accountNumber} {...employee} ></AccountDetailsComponent>
+                })
+            }
         </div>
-
     )
 }

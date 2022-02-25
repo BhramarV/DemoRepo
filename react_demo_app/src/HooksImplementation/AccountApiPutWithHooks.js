@@ -3,23 +3,26 @@ import axios from 'axios';
 // import GetHook from './AccountApiGetWithHooks';
 
 export default function PutHook(props) {
-    // var [accountNumber, setNumber] = useState(props.dataSend.accountNumber);
-    // var [customerName, setName] = useState(props.dataSend.customerName);
+    debugger;
+    var [accountNumber, setNumber] = useState(props.dataSend ?  props.dataSend.accountNumber : "");
+    var [customerName, setName] = useState(props.dataSend ? props.dataSend.customerName : "");
+    var [currentAddress, setAddress] = useState(props.dataSend ? props.dataSend.currentAddress : "");
+    var [currentBalance, setBalance] = useState(props.dataSend ? props.dataSend.currentBalance : "");
     
-    var [accountNumber, setNumber] = useState("");
-    var [customerName, setName] = useState("");
-    var [currentAddress, setAddress] = useState("");
-    var [currentBalance, setBalance] = useState("");
+    // var [accountNumber, setNumber] = useState("");
+    // var [customerName, setName] = useState("");
+    // var [currentAddress, setAddress] = useState("");
+    // var [currentBalance, setBalance] = useState("");
 
     // var [data, setData] = useState([]);
 
-    useEffect(() => {
-        setNumber(props.dataSend.accountNumber);
-        setName(props.dataSend.customerName);
-        setAddress(props.dataSend.currentAddress);
-        setBalance(props.dataSend.currentBalance);
-        debugger;
-    }, [])
+    // useEffect(() => {
+    //     setNumber(props.dataSend.accountNumber);
+    //     setName(props.dataSend.customerName);
+    //     setAddress(props.dataSend.currentAddress);
+    //     setBalance(props.dataSend.currentBalance);
+    //     debugger;
+    // }, [])
 
     const onNumberChange = e => {
         setNumber(e.target.value);
