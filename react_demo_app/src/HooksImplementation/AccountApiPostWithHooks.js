@@ -43,6 +43,7 @@ export default function PostHook() {
           .post("https://localhost:5001/api/Student/AddStudent", data)
           .then(res => console.log(res))
           .catch(err => console.log(err));
+          alert("Data Save Successfully");
     };
 
     return (

@@ -21,7 +21,7 @@ export default function GetHook() {
         <div>      
             {
                 accountdetail.map((employee) => {
-                    return <AccountDetailsComponent key={employee.accountNumber} {...employee} ></AccountDetailsComponent>
+                    return <AccountDetailsComponent key={employee.accountNumber} detail = {employee} ></AccountDetailsComponent>
                 })
             }
         </div>
