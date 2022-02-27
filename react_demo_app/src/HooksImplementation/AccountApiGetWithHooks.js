@@ -6,16 +6,17 @@ import AccountDetailsComponent from '../classComponent/AccountDetailsComponent';
 export default function GetHook() {
     var [accountdetail, setAccountDetail] = useState([]);
     // var [accountNumber, setNumber] = useState("");
-    debugger;
+    // debugger;
 
     useEffect(() => {
         var dataPromise = axios.get("https://localhost:5001/api/Student/AllStudents");
         dataPromise.then((response) => {
-            debugger;
+            // debugger;
             setAccountDetail(response.data);
-            debugger;
+            // debugger;
         })
     }, [])
+    // }, [])
 
     return (
         <div>      

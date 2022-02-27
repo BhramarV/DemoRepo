@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-// import GetHook from './AccountApiGetWithHooks';
+import GetHook from './AccountApiGetWithHooks';
 
 export default function PutHook(props) {
-    debugger;
     var [accountNumber, setNumber] = useState(props.pro ?  props.pro.accountNumber : "");
     var [customerName, setName] = useState(props.pro ? props.pro.customerName : "");
     var [currentAddress, setAddress] = useState(props.pro ? props.pro.currentAddress : "");
     var [currentBalance, setBalance] = useState(props.pro ? props.pro.currentBalance : "");
     
-    debugger;
+    var [checkUpdate, setUpdate] = useState("");
+
+    // debugger;
     // var accountNumber = props.pro.accountNumber;
     // var customerName = props.pro.customerName;
     // var currentAddress = props.pro.currentAddress;
@@ -29,7 +30,7 @@ export default function PutHook(props) {
         setNumber(e.target.value);
     };
 
-    debugger;
+    // debugger;
     
     const onNameChange = e => {
         setName(e.target.value);
@@ -57,12 +58,13 @@ export default function PutHook(props) {
           .then(res => console.log(res))
           .catch(err => console.log(err));
           alert("Data Updated");
-          debugger;
+          setUpdate(true);
+        //   debugger;
     };
 
     return (
         <div className="AccountApiPutWithHooks">
-            <form className="AccountApiPutWithHooks" onSubmit={handleSubmit}>
+            <form className="AccountApiPutWithHooks">
                 {/* <label value="Account Number"></label> */}
                 <input
                     placeholder={accountNumber} value={accountNumber}
@@ -84,7 +86,8 @@ export default function PutHook(props) {
                     onChange={onBalanceChange} required />
                 <br />
 
-                <button type="submit"> Update Student </button>
+                <button type="submit" onClick={handleSubmit}> Update Student </button>
+                {checkUpdate && <GetHook></GetHook>}
             </form>
         </div>
     );

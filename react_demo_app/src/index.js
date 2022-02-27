@@ -41,8 +41,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './HooksImplementation/AccountApiPostWithHooks';
-import App from './HooksImplementation/AccountApiGetWithHooks';
-debugger;
+// import App from './HooksImplementation/AccountApiGetWithHooks';
+import App from './SinglePageApp/SPAAccountDetails'
+// debugger;
 
 ReactDOM.render(<App></App>
     , document.getElementById("root"))

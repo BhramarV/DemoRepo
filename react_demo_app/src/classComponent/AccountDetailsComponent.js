@@ -18,23 +18,21 @@ export default function AccountDetailsComponent(props) {
 
     const DeleteHook = (e) => {
         var id = e.target.id;
-        debugger;
+        // debugger;
         axios.delete("https://localhost:5001/api/Student/DeleteAccountWithoutAlert?id=" + id).then(() => {
-            debugger;
             alert("Employee is Deleted");
             abcd = true;
-            debugger;
+            // debugger;
             // AccountDetailsComponent();
             // GetAllAccount();
         })
-        debugger;
+        // debugger;
     }
 
     const UpdateUser = (e) => {
-        debugger;
         // var koiBHiObject = props.detail;
         setAbcd(true);
-        debugger;
+        // debugger;
         
         // return (
         //     <div>
